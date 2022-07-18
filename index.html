@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<script type="module">
-import { add } from "./build/release.js";
-document.body.innerText = add(1, 2);
-</script>
-</head>
-<body></body>
+  <head>
+    <script type="module">
+      import { encode, decode } from './build/release.js'
+      const text = 'hello world abcddd'
+
+      const encodedText = encode(text)
+      const decodedText = decode(encodedText)
+
+      document.querySelector('h2').innerText = `origin text: ${text}`
+      document.querySelector(
+        '#div1'
+      ).innerText = `encodedText text: ${encodedText}`
+      document.querySelector(
+        '#div2'
+      ).innerText = `decodedText text: ${decodedText}`
+    </script>
+  </head>
+  <body>
+    <h2 id="h2"></h2>
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </body>
 </html>
