@@ -1,27 +1,5 @@
 // The entry file of your WebAssembly module.
 
-export function add(a: i32, b: i32): i32 {
-  return a + b;
-}
-
-export function str(a: string, b: string): string {
-  return a + b;
-}
-
-export function arr(a: i32[], b:i32[]): string {
-  const arr = a.concat(b)
-  return arr.join('')
-}
-
-export function sort(n: i32[]): i32[] {
-  n.sort((n1, n2) => n1 - n2)
-  return n
-}
-
-export function map(arr: i32[]): string {
-  return arr.map<i32>((i: i32) => i * 2).join('|')
-}
-
 // 字符串加密算法
 export function encode(str: string): string {
   const len: i32 = str.length

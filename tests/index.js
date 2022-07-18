@@ -1,15 +1,15 @@
 import assert from 'assert'
-import { add, str, arr, sort, map, encode, decode } from '../build/debug.js'
+import { encode, decode } from '../build/debug.js'
 
-assert.strictEqual(add(1, 2), 3)
+// assert.strictEqual(add(1, 2), 3)
 
-assert.strictEqual(str('aa', 'bb'), 'aabb')
+// assert.strictEqual(str('aa', 'bb'), 'aabb')
 
-assert.strictEqual(arr([1], [2]), '12')
+// assert.strictEqual(arr([1], [2]), '12')
 
-assert.deepStrictEqual(sort([3, 1, 4, 2]), [1, 2, 3, 4])
+// assert.deepStrictEqual(sort([3, 1, 4, 2]), [1, 2, 3, 4])
 
-assert.deepStrictEqual(map([1, 2, 3, 5, 8]), '2|4|6|10|16')
+// assert.deepStrictEqual(map([1, 2, 3, 5, 8]), '2|4|6|10|16')
 
 // 字符串长度小于 11
 assert.strictEqual(encode('我有一只小毛驴'), '髩汐岄呟乵松抆')
