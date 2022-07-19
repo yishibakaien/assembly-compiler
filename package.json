@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node tests",
+    "pinyin:debug": "asc assembly/pinyin/commonly.ts --target debug-pinyin --exportRuntime",
+    "pinyin:release": "asc assembly/pinyin/commonly.ts --target release-pinyin --exportRuntime",
+
     "asbuild:encode:debug": "asc assembly/encode.ts --target debug-encode --exportRuntime",
     "asbuild:encode:release": "asc assembly/encode.ts --target release-encode --exportRuntime",
 
@@ -14,6 +17,7 @@
     "asbuild:debug": "asc assembly/index.ts --target debug --exportRuntime",
     "asbuild:release": "asc assembly/index.ts --target release --exportRuntime",
 
+    "build:pinyin": "npm run pinyin:debug && npm run pinyin:release",
     "build": "npm run asbuild:debug && npm run asbuild:release && npm run asbuild:encode:debug && npm run asbuild:encode:release && npm run asbuild:decode:debug && npm run asbuild:decode:release",
     "start": "npx serve ."
   },

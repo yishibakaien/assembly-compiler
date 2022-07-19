@@ -1,16 +1,6 @@
 import assert from 'assert'
 import { encode, decode } from '../dist/index/debug.js'
 
-// assert.strictEqual(add(1, 2), 3)
-
-// assert.strictEqual(str('aa', 'bb'), 'aabb')
-
-// assert.strictEqual(arr([1], [2]), '12')
-
-// assert.deepStrictEqual(sort([3, 1, 4, 2]), [1, 2, 3, 4])
-
-// assert.deepStrictEqual(map([1, 2, 3, 5, 8]), '2|4|6|10|16')
-
 // 字符串长度小于 11
 assert.strictEqual(encode('我有一只小毛驴'), '髩汐岄呟乵松抆')
 assert.strictEqual(decode('髩汐岄呟乵松抆'), '我有一只小毛驴')

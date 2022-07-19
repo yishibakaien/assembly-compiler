@@ -1,5 +1,21 @@
 {
   "targets": {
+    "debug-pinyin": {
+      "outFile": "dist/pinyin/debug-pinyin.wasm",
+      "textFile": "dist/pinyin/debug-pinyin.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release-pinyin": {
+      "outFile": "dist/pinyin/release-pinyin.wasm",
+      "textFile": "dist/pinyin/release-pinyin.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    },
+
     "debug-encode": {
       "outFile": "dist/encode/debug-encode.wasm",
       "textFile": "dist/encode/debug-encode.wat",
