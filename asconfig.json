@@ -1,14 +1,46 @@
 {
   "targets": {
+    "debug-encode": {
+      "outFile": "dist/encode/debug-encode.wasm",
+      "textFile": "dist/encode/debug-encode.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release-encode": {
+      "outFile": "dist/encode/release-encode.wasm",
+      "textFile": "dist/encode/release-encode.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    },
+
+    "debug-decode": {
+      "outFile": "dist/decode/debug-decode.wasm",
+      "textFile": "dist/decode/debug-decode.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release-decode": {
+      "outFile": "dist/decode/release-decode.wasm",
+      "textFile": "dist/decode/release-decode.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    },
+
     "debug": {
-      "outFile": "build/debug.wasm",
-      "textFile": "build/debug.wat",
+      "outFile": "dist/index/debug.wasm",
+      "textFile": "dist/index/debug.wat",
       "sourceMap": true,
       "debug": true
     },
     "release": {
-      "outFile": "build/release.wasm",
-      "textFile": "build/release.wat",
+      "outFile": "dist/index/release.wasm",
+      "textFile": "dist/index/release.wat",
       "sourceMap": true,
       "optimizeLevel": 3,
       "shrinkLevel": 0,

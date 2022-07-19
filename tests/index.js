@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { encode, decode } from '../build/debug.js'
+import { encode, decode } from '../dist/index/debug.js'
 
 // assert.strictEqual(add(1, 2), 3)
 

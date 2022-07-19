@@ -5,9 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "node tests",
+    "asbuild:encode:debug": "asc assembly/encode.ts --target debug-encode --exportRuntime",
+    "asbuild:encode:release": "asc assembly/encode.ts --target release-encode --exportRuntime",
+
+    "asbuild:decode:debug": "asc assembly/encode.ts --target debug-decode --exportRuntime",
+    "asbuild:decode:release": "asc assembly/encode.ts --target release-decode --exportRuntime",
+
     "asbuild:debug": "asc assembly/index.ts --target debug --exportRuntime",
     "asbuild:release": "asc assembly/index.ts --target release --exportRuntime",
-    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+
+    "build": "npm run asbuild:debug && npm run asbuild:release && npm run asbuild:encode:debug && npm run asbuild:encode:release && npm run asbuild:decode:debug && npm run asbuild:decode:release",
     "start": "npx serve ."
   },
   "author": "",
