@@ -1,21 +1,22 @@
+import { OFFSET_CHARCODE_INDEX, MOD_LENGTH } from './config'
 
 // 字符串解密算法
 export function decode(str: string): string {
   const len: i32 = str.length
 
-  if (len < 11) {
+  if (len < MOD_LENGTH) {
     const codes: i32[] = []
     const chars: string[] = str.split('')
     for (let i: i32 = 0; i < len; i++) {
       const char: string = chars[i]
-      codes.push(char.charCodeAt(0) - len - 110)
+      codes.push(char.charCodeAt(0) - len - OFFSET_CHARCODE_INDEX)
     }
 
     str =  codes.reverse().map<string>((code: i32) => String.fromCharCode(code)).join('')
 
   } else {
     
-    let mod: i32 = len % 11
+    let mod: i32 = len % MOD_LENGTH
 
     if (mod <= 5) {
       mod = 5
@@ -56,7 +57,7 @@ export function decode(str: string): string {
 
     for (let i = 0; i < len; i++) {
       const char: string = chars[i]
-      codes.push(char.charCodeAt(0) - len - 110)
+      codes.push(char.charCodeAt(0) - len - OFFSET_CHARCODE_INDEX)
     }
 
     str = codes.reverse().map<string>((code: i32) => String.fromCharCode(code)).join('')

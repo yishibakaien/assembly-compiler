@@ -11,6 +11,8 @@
  (type $i32_i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32 i32) (result i32)))
  (type $i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
+ (global $assembly/config/OFFSET_CHARCODE_INDEX i32 (i32.const 110))
+ (global $assembly/config/MOD_LENGTH i32 (i32.const 11))
  (global $~lib/shared/runtime/Runtime.Stub i32 (i32.const 0))
  (global $~lib/shared/runtime/Runtime.Minimal i32 (i32.const 1))
  (global $~lib/shared/runtime/Runtime.Incremental i32 (i32.const 2))
@@ -3502,7 +3504,7 @@
     call $~lib/string/String#charCodeAt
     local.get $1
     i32.add
-    i32.const 110
+    global.get $assembly/config/OFFSET_CHARCODE_INDEX
     i32.add
     call $~lib/array/Array<i32>#push
     drop
@@ -3542,7 +3544,7 @@
   local.tee $0
   i32.store offset=24
   local.get $1
-  i32.const 11
+  global.get $assembly/config/MOD_LENGTH
   i32.lt_s
   if
    local.get $0
@@ -3555,7 +3557,7 @@
    return
   end
   local.get $1
-  i32.const 11
+  global.get $assembly/config/MOD_LENGTH
   i32.rem_s
   local.set $3
   local.get $3

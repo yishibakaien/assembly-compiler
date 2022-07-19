@@ -1,3 +1,5 @@
+import { OFFSET_CHARCODE_INDEX, MOD_LENGTH } from './config'
+
 // 字符串加密算法
 export function encode(str: string): string {
   const len: i32 = str.length
@@ -7,16 +9,16 @@ export function encode(str: string): string {
 
   for (let i: i32 = 0; i < len; i++) {
     const char: string = chars[i]
-    codes.push(char.charCodeAt(0) + len + 110)
+    codes.push(char.charCodeAt(0) + len + OFFSET_CHARCODE_INDEX)
   }
 
   codes = codes.reverse()
 
   str = codes.map<string>((code: i32) => String.fromCharCode(code)).join('')
   
-  if (len < 11) return str
+  if (len < MOD_LENGTH) return str
 
-  let mod: i32 = len % 11
+  let mod: i32 = len % MOD_LENGTH
   if (mod <= 5) {
     mod = 5
   }
